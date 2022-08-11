@@ -1,0 +1,61 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/util 
+        http://www.springframework.org/schema/util/spring-util.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+<util:list list-class="java.util.LinkedList" id="LLsample">
+					<value>1234567890</value>
+					<value>0987654321</value>
+					<value>1357924680</value>
+</util:list>
+
+<util:set set-class="java.util.HashSet" id="HSsample">
+					<value>Dubai</value>
+					<value>India</value>
+					<value>USA</value>
+					<value>USA</value>
+</util:set>
+
+<util:map map-class="java.util.TreeMap" id="mapsample">
+					<entry key="10" value="Ten" />
+					<entry key="1" value="One" />
+</util:map>
+
+<util:properties id="Prop_sample">
+					<prop key="10">Ten</prop>
+					<prop key="1">One</prop>
+</util:properties>
+
+		<bean class="com.collection.Customers" name="customer">
+			<property name="name">
+				<value>Syed</value>
+			</property>
+		
+			<property name="contacts" ref="LLsample">
+			</property>
+			
+			<property name="addresses" ref="HSsample">
+			</property>
+			
+			<property name="products" ref="mapsample">
+			</property>
+			
+			<property name="properties" ref="Prop_sample">
+			</property>
+		</bean>	   
+</beans>
